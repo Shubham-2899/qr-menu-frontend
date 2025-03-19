@@ -1,5 +1,5 @@
 import * as React from 'react';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Avatar, Button, TextField, Grid, Box, Typography, Alert } from '@mui/material';
@@ -8,6 +8,7 @@ import './signup-signin-styles.css';
 import { useUserAuth } from '../../contexts/UserAuthContext';
 import { OAuthCredential } from 'firebase/auth';
 import loginSvg from '../../assets/login1.svg';
+import QrCode2Icon from '@mui/icons-material/QrCode2';
 
 const Signin = () => {
   const [error, setError] = useState<string>('');
@@ -56,7 +57,7 @@ const Signin = () => {
           {/* Right Side - Sign-in Box */}
           <Box className="signin-box">
             <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+              <QrCode2Icon />
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign in

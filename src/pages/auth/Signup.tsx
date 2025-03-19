@@ -1,5 +1,5 @@
 import * as React from "react";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Link, useNavigate } from "react-router-dom";
 import { Errors, IUserData } from "../../interfaces";
 import { ChangeEvent, useState } from "react";
@@ -20,6 +20,7 @@ import {
 } from "../../utils/UserDataValidation";
 import "./signup-signin-styles.css";
 import AccessAccount from "../../assets/access-account.svg";
+import QrCode2Icon from '@mui/icons-material/QrCode2';
 
 const Signup = () => {
   const userDefault: IUserData = {
@@ -83,7 +84,7 @@ const Signup = () => {
       {/* Right Side - Form */}
       <Box className="auth-box">
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
+          <QrCode2Icon />
         </Avatar>
         <Typography component="h1" variant="h5" sx={{ mb: 2 }}>
           Register

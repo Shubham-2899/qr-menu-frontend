@@ -55,7 +55,8 @@
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .signin-container {
-    flex-direction: column;
+    margin-top: 96px;
+    align-items: unset;
   }
 
   .signin-svg {
@@ -99,7 +100,9 @@
 /* Mobile View: Hide SVG and show only form */
 @media (max-width: 768px) {
   .forgot-password-container {
-    flex-direction: column;
+    /* flex-direction: column; */
+    margin-top: 96px;
+    align-items: unset;
   }
 
   .forgot-password-svg {
@@ -143,7 +146,7 @@
   border-radius: 8px;
 
   span {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
     color: red;
     padding: 5px 0px 10px 16px;
@@ -153,6 +156,7 @@
 @media (max-width: 768px) {
   .auth-container {
     flex-direction: column;
+    justify-content: unset;
   }
 
   .auth-svg {
@@ -160,6 +164,7 @@
   }
 
   .auth-box {
+    margin-top: 96px;
     width: 90%;
   }
 }
