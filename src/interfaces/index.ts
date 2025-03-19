@@ -22,6 +22,7 @@ export interface AuthContextModel {
   logOut(): Promise<void>;
   googleSignIn: () => Promise<UserCredential>;
   resetPassword(email: string): Promise<void>;
+  loading: boolean
 }
 
 export interface IUserData {

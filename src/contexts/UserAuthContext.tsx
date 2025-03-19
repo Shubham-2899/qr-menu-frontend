@@ -10,7 +10,7 @@ import {
   User,
   setPersistence,
   sendPasswordResetEmail,
-  browserLocalPersistence,
+  browserSessionPersistence,
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import React from "react";
@@ -35,12 +35,13 @@ export function useAuth(): AuthContextModel {
 export function UserAuthContextProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null);
   const [login, setLogin] = useState(false);
+  const [loading,setLoading] = useState(true);
 
   async function logIn(email: string, password: string) {
     //   const persistence = false  //remember me functionality
     //  ? auth.Persistence.LOCAL
     //  : auth.Auth.Persistence.SESSION;
-    await setPersistence(auth, browserLocalPersistence);
+    await setPersistence(auth, browserSessionPersistence);
     return signInWithEmailAndPassword(auth, email, password);
   }
   function signUp(email: string, password: string, username: string) {
@@ -49,6 +50,8 @@ export function UserAuthContextProvider({ children }: AuthProviderProps) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
   function logOut() {
+    console.log("logout");
+    setLogin(false);
     return signOut(auth);
   }
 
@@ -64,6 +67,7 @@ export function UserAuthContextProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       setUser(currentuser);
+      setLoading(false)
     });
 
     return () => {
@@ -80,6 +84,8 @@ export function UserAuthContextProvider({ children }: AuthProviderProps) {
     login,
     setLogin,
     resetPassword,
+    loading,
+    setLoading
   };
 
   return (

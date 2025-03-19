@@ -4,6 +4,12 @@ import Signup from "../pages/auth/Signup";
 import { ForgotPassword } from "../pages/auth/ForgotPassword";
 import NotFound404 from "../pages/404/404";
 import Home from "../pages/home/Home";
+import Products from "../pages/Products";
+import Pricing from "../pages/Pricing";
+import OurClients from "../pages/OurClients";
+import Menu from "../pages/menu/Menu";
+import { ProtectedRoute } from "./ProtectedRoute";
+import Profile from "../pages/profile/Profile";
 
 const GetMyMenuRoutes = () => {
   return (
@@ -13,8 +19,14 @@ const GetMyMenuRoutes = () => {
       <Route path="login" element={<Signin />} />
       <Route path="register" element={<Signup />} />
       <Route path="forgot-password" element={<ForgotPassword />} />
-      <Route path="tasks" element={<div>tasks</div>} />
-      <Route path="about" element={<div>About us</div>} />
+      <Route path="products" element={<Products />} />
+      <Route path="pricing" element={<Pricing />} />
+      <Route path="our-clients" element={<OurClients />} />
+
+      <Route element={<ProtectedRoute />}>
+        <Route path="menu" element={<Menu />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
       <Route path="*" element={<NotFound404 />} />
     </Routes>
   );

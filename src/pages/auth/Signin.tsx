@@ -24,9 +24,9 @@ const Signin = () => {
     try {
       const res = await logIn(email, password);
       const token = (res?.user as unknown as OAuthCredential).accessToken;
-      if (token) localStorage.setItem('Auth Token', token);
+      if (token) sessionStorage.setItem('Auth Token', token);
       const userData = JSON.stringify(res?.user);
-      if (userData) localStorage.setItem('user', userData);
+      if (userData) sessionStorage.setItem('user', userData);
       setLogin(true);
       navigate('/');
     } catch (err) {
@@ -36,7 +36,7 @@ const Signin = () => {
   }
 
   useEffect(() => {
-    const authToken = localStorage.getItem('Auth Token');
+    const authToken = sessionStorage.getItem('Auth Token');
     if (authToken) {
       navigate('/');
     }

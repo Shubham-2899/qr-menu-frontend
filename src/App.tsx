@@ -1,19 +1,21 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Header from "./components/Header";
 import GetMyMenuRoutes from "./routes";
 import Footer from "./components/Footer";
-import { UserAuthContextProvider } from "./contexts/UserAuthContext";
+import {
+  UserAuthContextProvider
+} from "./contexts/UserAuthContext";
+import Header from "./components/header/Header";
 
 const App: React.FC = () => {
   return (
     <>
       <UserAuthContextProvider>
-      <Box className="Container">
+        <Box className="Container">
         <Header />
-        <GetMyMenuRoutes />
-        <Footer />
-      </Box>
+          <GetMyMenuRoutes />
+          <Footer />
+        </Box>
       </UserAuthContextProvider>
     </>
   );

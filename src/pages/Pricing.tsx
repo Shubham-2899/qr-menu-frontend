@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 
-const OurClients = () => {
+const Pricing = () => {
   return (
     <Box sx={{ pt: 10, height: "100vh" }}>
-      <h1>Our Clients</h1>
+      <h1>Pricing</h1>
     </Box>
   );
 };
 
-export default OurClients;
+export default Pricing;
