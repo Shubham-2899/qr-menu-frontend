@@ -1,0 +1,165 @@
+/* .signupBox,
+.signin {
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: red;
+    padding: 5px 0px 10px 16px;
+  }
+
+  .formBtn {
+    margin: 24px 0 16px 0 !important;
+    text-transform: uppercase;
+  }
+} */
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: 100%; */
+  /* gap: 10%; */
+}
+
+/* Left Side - SVG */
+.signin-svg {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-svg img {
+  width: 80%;
+  max-height: 500px;
+}
+
+/* Right Side - Sign-in Box */
+.signin-box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .signin-container {
+    flex-direction: column;
+  }
+
+  .signin-svg {
+    display: none;
+  }
+
+  .signin-box {
+    width: 100%;
+  }
+}
+
+.forgot-password-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.forgot-password-svg {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot-password-svg img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Right Side: Form */
+.forgot-password-form {
+  width: 50%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Mobile View: Hide SVG and show only form */
+@media (max-width: 768px) {
+  .forgot-password-container {
+    flex-direction: column;
+  }
+
+  .forgot-password-svg {
+    display: none;
+  }
+
+  .forgot-password-form {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+.auth-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-svg {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-svg img {
+  width: 80%;
+  max-width: 500px;
+}
+
+.auth-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: red;
+    padding: 5px 0px 10px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-svg {
+    display: none;
+  }
+
+  .auth-box {
+    width: 90%;
+  }
+}

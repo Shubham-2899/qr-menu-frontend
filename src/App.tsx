@@ -1,11 +1,22 @@
-import "./App.css";
+import React from "react";
+import { Box } from "@mui/material";
+import Header from "./components/Header";
+import GetMyMenuRoutes from "./routes";
+import Footer from "./components/Footer";
+import { UserAuthContextProvider } from "./contexts/UserAuthContext";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
-      <div>Get My Menu</div>
+      <UserAuthContextProvider>
+      <Box className="Container">
+        <Header />
+        <GetMyMenuRoutes />
+        <Footer />
+      </Box>
+      </UserAuthContextProvider>
     </>
   );
-}
+};
 
 export default App;

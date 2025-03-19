@@ -1,0 +1,19 @@
+.error-code {
+    color: #f47755;
+    font-size: 4rem;
+    line-height: 1;
+  }
+  p.lead {
+    font-size: 1.6rem;
+    color: #4f5a64;
+  }
+  .help-actions button {
+    display: inline-block;
+    border: 2px solid #23a7de;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    -webkit-transition: 0.25s ease;
+    transition: 0.25s ease;
+    cursor: pointer;
+  }
