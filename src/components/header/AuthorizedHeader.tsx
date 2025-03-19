@@ -137,6 +137,7 @@ const AuthorizedHeader: React.FC = () => {
                       ? handleLogout
                       : () => handleMenuClick(page.path)
                   }
+                  sx={{ color: "rgb(71, 83, 107)" }}
                 >
                   <ListItemText primary={page.name} />
                 </ListItem>

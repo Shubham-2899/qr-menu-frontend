@@ -13,7 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const pages = [
   { name: "Products", path: "/products" },
@@ -27,6 +27,12 @@ const UnAuthorizedHeader: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open);
+  };
+
+  const navigate = useNavigate();
+
+  const handleMenuClick = (path: string) => {
+    navigate(path);
   };
 
   return (
@@ -99,7 +105,12 @@ const UnAuthorizedHeader: React.FC = () => {
         >
           <List>
             {pages.map((page, index) => (
-              <ListItem component="button" key={index}>
+              <ListItem
+                component="button"
+                key={index}
+                onClick={() => handleMenuClick(page.path)}
+                sx={{ color: "rgb(71, 83, 107)" }}
+              >
                 <ListItemText primary={page.name} />
               </ListItem>
             ))}
